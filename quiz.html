@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste municipio</title>
+    <style>
+      #res{
+        background-color: rgb(227, 225, 255);
+        right: 98%;
+        width: 44%;
+        font-size: 16pt;
+        font-style:white;
+        font-family: Impact;
+      }
+      Body{
+        background-color: rgb(233, 249, 255);
+      }
+
+      input{
+        width: 6%;
+      }
+
+    </style>
+</head>
+<body>
+  <h2>Qual nota que você dá?</h2> <br>
+  <h3>1 a 10</h3>
+    Saúde <input type="number" maxlength="2" size="2" name="num1" id="num1" ><p>
+    Educação <input type="number" name="num2" id="num2"><p></p>
+    Transporte <input type="number" name="num3" id="num3"><p></p>
+    Infraestrutura <input type="number" name="num4" id="num4"><p></p>
+    Meio Ambiente <input type="number" name="num5" id="num5"><p></p>
+<input type="button" value="Resultado" onclick="testar()"><p></p>
+    <div id="res">
+        Sua nota foi:
+    </div>
+
+<script>
+  function testar(){
+    var num1 = window.document.getElementById('num1')
+    var num2 = window.document.getElementById('num2')
+    var num3 = window.document.getElementById('num3')
+    var num4 = window.document.getElementById('num4')
+    var num5 = window.document.getElementById('num5')
+    var res = window.document.getElementById('res')
+
+    var n1 = Number(num1.value)
+    var n2 = Number(num2.value)
+    var n3 = Number(num3.value)
+    var n4 = Number(num4.value)
+    var n5 = Number(num5.value)
+
+    var somar=(n1+n2+n3+n4+n5)
+      
+      
+       if(somar<=10){
+        res.innerHTML=`Você considerou nos como RUIM`    
+      
+       }
+      else if(somar>=11 && somar<=20){
+        res.innerHTML="Você considerou nos como REGULAR"      
+      }
+      else if(somar>=21 && somar<=30){
+        res.innerHTML="Você considerou nos como BOM"
+      }
+      else if(somar>=31 && somar<=40){
+      res.innerHTML="Você considerou nos como MUITO BOM"
+      }
+      else if(somar>=41 && somar<=50){
+      res.innerHTML="Você Considerou nos como EXCELENTE"
+      }
+      else if(somar>50){
+        res.innerHTML="Você respondeu INCORRETO Apenas de 1 a 10"
+      }
+  
+  }
+</script>
+    
+</body>
+</html>
